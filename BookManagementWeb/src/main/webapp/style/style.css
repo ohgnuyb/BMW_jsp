@@ -1,0 +1,419 @@
+@charset "UTF-8";
+
+/* 공통 스타일 */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* 헤더 스타일 */
+.main-header {
+    width: 100%;
+    height: 85px; /* 이전 70px에서 85px로 늘림 */
+    top: 0;
+    background-color: #6aabde;
+    position: fixed;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.main-header h2 {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 0;
+    color: #fff;
+    font-size: 1.5em;
+}
+
+.main-nav {
+    text-align: center;
+    padding-bottom: 0;
+    margin-top: 5px; /* 이전 -5px에서 5px로 변경: 메뉴를 아래로 좀 더 내림 */
+}
+
+.main-nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0 15px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+    font-size: 0.9em;
+}
+
+.main-nav a:hover {
+    color: #e0e0e0;
+}
+
+/* 섹션 공통 스타일 - 헤더 높이 변경에 따라 margin-top 조정 */
+.main-section {
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    margin-top: 85px; /* 헤더 높이(85px)와 동일하게 조정 */
+    min-height: calc(100vh - 125px); /* 뷰포트 높이 - (헤더 85px + 푸터 40px) */
+    background-color: #f9f9f9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.content-container { /* 섹션 내에서 내용을 감싸는 div */
+    max-width: 900px; /* 콘텐츠 최대 너비 */
+    width: 100%;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* 테이블 스타일 */
+table {
+    border-collapse: collapse; /* 셀 간 경계선 제거 */
+    width: 100%; /* 콘텐츠 컨테이너에 맞게 너비 조절 */
+    margin: 20px auto; /* 중앙 정렬 */
+    background-color: #fff;
+}
+
+table th, table td {
+    border: 1px solid #ddd; /* 옅은 경계선 */
+    padding: 12px 15px;
+    text-align: center;
+}
+
+table th {
+    background-color: #eef; /* 헤더 배경색 */
+    font-weight: bold;
+    color: #555;
+}
+
+table tr:nth-child(even) {
+    background-color: #f5f5f5; /* 짝수 행 배경색 */
+}
+
+table tr:hover {
+    background-color: #e0f2f7; /* 호버 시 배경색 변경 */
+}
+
+/* 폼 스타일 */
+form table {
+    margin: 20px auto; /* 중앙 정렬 */
+    width: auto; /* 폼 테이블은 내용에 맞게 너비 조절 */
+}
+
+form input[type="text"], form select {
+    width: calc(100% - 22px); /* 패딩, 보더 고려 */
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px; /* 모서리 둥글게 */
+    font-size: 1em;
+}
+
+form input[type="button"],
+form input[type="submit"],
+form input[type="reset"],
+button {
+    background-color: #5cb85c; /* 초록색 버튼 */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 5px;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+form input[type="button"]:hover,
+form input[type="submit"]:hover,
+form input[type="reset"]:hover,
+button:hover {
+    background-color: #4cae4c;
+}
+
+form input[type="reset"] {
+    background-color: #f0ad4e; /* 주황색 버튼 */
+}
+
+form input[type="reset"]:hover {
+    background-color: #ec971f;
+}
+
+/* 푸터 스타일 */
+.main-footer {
+    bottom: 0;
+    position: relative; /* fixed 대신 relative로 변경, body flex와 함께 동작 */
+    width: 100%;
+    height: 40px;
+    background-color: #333; /* 어두운 회색 */
+    color: #fff; /* 흰색 글씨 */
+    text-align: center;
+    line-height: 40px;
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.1); /* 그림자 추가 */
+    margin-top: auto; /* flex 컨테이너에서 푸터를 아래로 밀어냄 */
+}
+
+/* 기타 요소 */
+h1, h2 {
+    color: #444;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+pre {
+    background-color: #eef;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: left;
+    line-height: 1.6;
+    white-space: pre-wrap; /* 긴 줄바꿈 처리 */
+    font-size: 1.05em;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+
+/* --- 홈 화면 (index.jsp) 전용 스타일 --- */
+
+.main-title {
+    font-size: 2.8em;
+    color: #2c3e50; /* 진한 회색 */
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.main-description {
+    font-size: 1.2em;
+    color: #7f8c8d; /* 연한 회색 */
+    margin-bottom: 40px;
+    line-height: 1.5;
+}
+
+/* 퀵 검색 섹션 */
+.quick-search-section {
+    background-color: #ecf0f1; /* 연한 회색 배경 */
+    padding: 30px;
+    border-radius: 8px;
+    margin-bottom: 40px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.quick-search-section h2 {
+    font-size: 1.8em;
+    color: #34495e; /* 진한 파란색 */
+    margin-bottom: 20px;
+}
+
+.search-form {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.search-input {
+    flex-grow: 1; /* 최대한 공간 차지 */
+    max-width: 400px;
+    padding: 12px 15px;
+    border: 1px solid #bdc3c7;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.search-button {
+    background-color: #3498db; /* 파란색 버튼 */
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.search-button:hover {
+    background-color: #2980b9;
+}
+
+/* 최근 추가된 도서 섹션 */
+.recent-books-section {
+    margin-bottom: 40px;
+}
+
+.recent-books-section h2 {
+    font-size: 1.8em;
+    color: #34495e;
+    margin-bottom: 25px;
+}
+
+.book-list-preview {
+    display: flex; /* 카드들을 가로로 정렬 */
+    justify-content: center;
+    gap: 25px; /* 카드 사이 간격 */
+    flex-wrap: wrap; /* 화면 작아지면 줄바꿈 */
+    margin-bottom: 20px;
+}
+
+.book-card {
+    background-color: #fff;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    padding: 20px;
+    width: 280px; /* 카드 너비 */
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* 내용과 링크 간격 조절 */
+    min-height: 200px; /* 최소 높이 */
+    transition: transform 0.2s ease-in-out;
+}
+
+.book-card:hover {
+    transform: translateY(-5px); /* 호버 시 약간 위로 */
+}
+
+.book-card h3 {
+    font-size: 1.3em;
+    color: #2c3e50;
+    margin-top: 0;
+    margin-bottom: 10px;
+    overflow: hidden; /* 긴 제목 처리 */
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.book-card p {
+    font-size: 0.95em;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+.book-card strong {
+    color: #34495e;
+}
+
+.book-card .detail-link {
+    display: block; /* 링크를 블록 요소로 만들어 버튼처럼 보임 */
+    margin-top: 15px;
+    padding: 8px 15px;
+    background-color: #2ecc71; /* 녹색 */
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.book-card .detail-link:hover {
+    background-color: #27ae60;
+    text-decoration: none;
+}
+
+.no-books-message {
+    font-size: 1.1em;
+    color: #e74c3c; /* 경고 색상 */
+    font-weight: bold;
+    padding: 20px;
+    background-color: #fcecec;
+    border-radius: 5px;
+}
+
+.view-all-link {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.view-all-link a {
+    font-size: 1.1em;
+    color: #3498db;
+    font-weight: bold;
+}
+
+.view-all-link a:hover {
+    text-decoration: underline;
+}
+
+/* 주요 기능 바로가기 섹션 */
+.quick-links-section {
+    background-color: #ecf0f1;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.quick-links-section h2 {
+    font-size: 1.8em;
+    color: #34495e;
+    margin-bottom: 20px;
+}
+
+.links-grid {
+    display: grid; /* 그리드 레이아웃 */
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* 반응형 그리드 */
+    gap: 20px;
+    justify-content: center;
+}
+
+.link-item {
+    background-color: #9b59b6; /* 보라색 */
+    color: white;
+    padding: 25px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 1.1em;
+    font-weight: bold;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.link-item:hover {
+    background-color: #8e44ad;
+    transform: translateY(-3px);
+    text-decoration: none;
+}
+
+/* 미디어 쿼리 (반응형 디자인) */
+@media (max-width: 768px) {
+    .main-title {
+        font-size: 2em;
+    }
+    .main-description {
+        font-size: 1em;
+    }
+    .book-list-preview {
+        flex-direction: column; /* 모바일에서 카드 세로 정렬 */
+        align-items: center;
+    }
+    .book-card {
+        width: 90%; /* 모바일에서 카드 너비 조정 */
+        max-width: 300px;
+    }
+    .search-form {
+        flex-direction: column;
+        align-items: center;
+    }
+    .search-input, .search-button {
+        width: 100%;
+        max-width: 300px;
+    }
+    .links-grid {
+        grid-template-columns: 1fr; /* 모바일에서 한 줄에 하나씩 */
+    }
+}
