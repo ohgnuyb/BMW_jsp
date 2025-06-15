@@ -1,5 +1,0 @@
-https://github.com/ohgnuyb/insta_sentiment_analyzer
-
-조장: 202434779 소병호
-
-팀원: 202434838 조성경, 202434853 최원혁, 202434841 조자현, 202434854 최재진

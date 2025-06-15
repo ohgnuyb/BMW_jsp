@@ -1,2 +1,0 @@
-git_test
-git_ohgnuyb_test
